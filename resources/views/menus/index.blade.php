@@ -7,156 +7,164 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 20px 0;
-        }
-
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .sidebar ul li a:hover {
-            color: #d1e7fd;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            background-color: #ffffff;
-        }
-
-        .content h1 {
-            color: #007bff;
-        }
-        .table table {
-        border: 1px solid #ddd;
-    }
-    .table th, .table td {
-        text-align: left;
-        border: 1px solid #ddd;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
     }
 
-    /* Hover Effect for Rows */
-    .table tbody tr:hover {
-        background-color: #D6E9F9;
+    .container {
+        display: flex;
+        height: 100vh;
     }
 
-    /* Hover Effect for Buttons */
-    .btn {
-        padding: 5px 10px;
-        border-radius: 5px;
+    .sidebar {
+        width: 250px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        padding: 20px;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar h2 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .sidebar ul li a {
+        color: white;
         text-decoration: none;
-        cursor: pointer;
-    }
-    .btn-warning {
-        background-color: #FFC107;
-        color: white;
-        border: none;
-    }
-    .btn-warning:hover {
-        background-color: #FFB400;
-    }
-    .btn-danger {
-        background-color: #DC3545;
-        color: white;
-        border: none;
-    }
-    .btn-danger:hover {
-        background-color: #C82333;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        padding: 10px 0;
+        border-radius: 10px;
     }
 
-    .btn-primary {
-        background-color: #007BFF;
+    .sidebar ul li a i {
+        margin-right: 10px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+        color: #d1e7fd;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar ul li a:hover i {
+        transform: scale(1.2);
+    }
+
+    .content {
+        flex: 1;
+        padding: 30px;
+        background-color: #ffffff;
+        overflow-y: auto;
+    }
+
+    .content h1 {
+        color: #007bff;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    /* Optional Scrollbar for Sidebar */
+    .sidebar {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #0056b3 #ffffff;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+        background: #0056b3;
+        border-radius: 10px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+        /* Styling for Add Menu Button */
+    .add-menu-btn {
+        margin-bottom: 10px;
+    }
+
+    .add-menu-btn a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px 20px;
         color: white;
-        border: none;
+        background-color: #28a745; /* Green color for the button */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
     }
-    .btn-primary:hover {
-        background-color: #0056b3;
+
+    .add-menu-btn a:hover {
+        background-color: #218838; /* Darker green on hover */
     }
-    /* Styling the table container */
+
+    /* Updated Table Styling */
     .table {
         margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
         border-radius: 10px;
-        overflow: hidden; /* Prevents content overflow outside the border-radius */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Table header */
     .table thead {
         background-color: #007BFF;
         color: white;
     }
 
-    .table th {
+    .table th, .table td {
         padding: 12px;
         text-align: left;
-    }
-
-    /* Table rows */
-    .table tbody tr {
-        background-color: #ffffff;
-        transition: background-color 0.3s ease; /* Smooth transition on hover */
-    }
-
-    .table tbody tr:nth-child(even) {
-        background-color: #f2f2f2; /* Alternate row color */
-    }
-
-    .table tbody tr:hover {
-        background-color: #d1e7fd; /* Hover effect */
-    }
-
-    /* Table cells */
-    .table td {
-        padding: 12px;
         border-bottom: 1px solid #ddd;
     }
 
-    /* Remove bottom border from the last row */
-    .table tbody tr:last-child td {
-        border-bottom: none;
+    .table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
     }
 
-    /* Button styling */
+    .table tbody tr:hover {
+        background-color: #d1e7fd;
+    }
+
     .btn {
-        padding: 5px 12px;
+        display: inline-block;
+        padding: 8px 16px;
         border-radius: 5px;
+        font-size: 14px;
         text-decoration: none;
         cursor: pointer;
         border: none;
-        font-size: 14px;
     }
 
     .btn-warning {
@@ -183,25 +191,6 @@
     }
 
     .btn-primary:hover {
-        background-color: #0056b3;
-    }
-
-    /* Add menu button container */
-    .add-menu-btn {
-        margin-bottom: 5px;
-        display: inline-block;
-    }
-
-    .add-menu-btn a {
-        text-decoration: none;
-        color: white;
-        background-color: blue;
-        padding: 10px 15px;
-        border-radius: 10px;
-        transition: background-color 0.3s ease;
-    }
-
-    .add-menu-btn a:hover {
         background-color: #0056b3;
     }
     </style>
@@ -213,8 +202,8 @@
         <h2>Restoran</h2>
         <ul>
             <li><a href="{{('home')}}"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="{{route('orders.index')}}"><i class="fas fa-user"></i> Order</a></li>
-            <li><a href="{{route('menus.index')}}"><i class="fas fa-cog"></i> Menu</a></li>
+            <li><a href="{{route('orders.index')}}"><i class="fas fa-solid fa-cash-register"></i> Order</a></li>
+            <li><a href="{{route('menus.index')}}"><i class="fas fa-bars"></i> Menu</a></li>
             <li><a href="{{('logout')}}"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
         </ul>
     </div>

@@ -32,7 +32,7 @@
 
 <div class="container">
     <div class="form-section">
-        <img src="https://via.placeholder.com/400x500" alt="Login Image">
+        <img src="1.png" alt="Login Image">
         <div class="form-container">
             <h2>Login</h2>
             <form action="{{Route('post.login')}}" method="POST">

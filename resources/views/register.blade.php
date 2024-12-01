@@ -52,7 +52,7 @@
                 <p class="mt-3">Already have an account? <a href="{{('login') }}">Login here</a></p>
             </form>
         </div>
-        <img src="https://via.placeholder.com/400x500" alt="Register Image">
+        <img src="2.png" alt="Register Image">
     </div>
 </div>
 
