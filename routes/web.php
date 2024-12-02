@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Controllers\Middleware;
 
 /*
@@ -22,10 +23,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', function () {
-        return view('dashboard');
-    });
-
+    Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::resource('menus', MenuController::class);
     Route::resource('orders', OrderController::class);
 });

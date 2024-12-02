@@ -107,6 +107,41 @@
     .sidebar::-webkit-scrollbar-track {
         background: #ffffff;
     }
+    .cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.card-content h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.card-content p {
+    margin: 5px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-icon {
+    font-size: 36px;
+    color: #007bff;
+}
+
     </style>
 </head>
 <body>
@@ -125,6 +160,28 @@
     <div class="content">
         <h1>Selamat Datang di Dashboard</h1>
         <p>Ini adalah konten dashboard Anda. Anda bisa menambahkan lebih banyak komponen di sini.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Total Menu</h3>
+                    <p>{{ $menuCount }}</p>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="card-content">
+                    <h3>Total Orders</h3>
+                    <p>{{ $orderCount }}</p>
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-solid fa-cash-register"></i>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 

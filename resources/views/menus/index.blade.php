@@ -234,7 +234,7 @@
                     @foreach($menus as $menu)
                         <tr>
                             <td>{{ $menu->name }}</td>
-                            <td>{{ $menu->price }}</td>
+                            <td>Rp {{ number_format($menu->price, 2) }}</td>
                             <td>{{ $menu->description }}</td>
                             <td>{{ $menu->category->name }}</td>
                             <td>
