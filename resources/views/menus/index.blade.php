@@ -119,13 +119,13 @@
         font-weight: bold;
         padding: 12px 20px;
         color: white;
-        background-color: #28a745; /* Green color for the button */
+        background-color: #007BFF; /* Green color for the button */
         border-radius: 5px;
         transition: background-color 0.3s ease;
     }
 
     .add-menu-btn a:hover {
-        background-color: #218838; /* Darker green on hover */
+        background-color: #005dc1; /* Darker green on hover */
     }
 
     /* Updated Table Styling */
@@ -201,16 +201,16 @@
     <div class="sidebar">
         <h2>Restoran</h2>
         <ul>
-            <li><a href="{{('home')}}"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="{{('home')}}"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{{route('orders.index')}}"><i class="fas fa-solid fa-cash-register"></i> Order</a></li>
             <li><a href="{{route('menus.index')}}"><i class="fas fa-bars"></i> Menu</a></li>
-            <li><a href="{{('logout')}}"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+            <li><a href="{{('logout-page')}}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 
     <div class="content">
-        <h1>Selamat Datang di Menu</h1>
-        <p>Ini adalah konten dashboard Anda. Anda bisa menambahkan lebih banyak komponen di sini.</p>
+        <h1>Welcome to Menu</h1>
+        <p>You can add new menu and view menu here</p>
         <div class="table">
             <div class="add-menu-btn">
                 <a href="{{ route('menus.create') }}">Add Menu</a>

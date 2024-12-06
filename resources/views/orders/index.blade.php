@@ -7,57 +7,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
 
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+    .container {
+        display: flex;
+        height: 100vh;
+    }
 
-        .sidebar {
-            width: 250px;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 20px;
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .sidebar {
+        width: 250px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        padding: 20px;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .sidebar h2 {
-            font-size: 26px;
-            margin-bottom: 30px;
-        }
+    .sidebar h2 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            width: 100%;
-        }
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
 
-        .sidebar ul li {
-            margin: 20px 0;
-        }
+    .sidebar ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
 
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
 
-        .sidebar ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+    .sidebar ul li a i {
+        margin-right: 10px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+        color: #d1e7fd;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar ul li a:hover i {
+        transform: scale(1.2);
+    }
 
         .content {
             flex: 1;
@@ -125,16 +141,16 @@
     <nav class="sidebar" role="navigation">
         <h2>Restoran</h2>
         <ul>
-            <li><a href="{{ url('/home') }}"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="{{ url('/home') }}"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{{ route('orders.index') }}"><i class="fas fa-cash-register"></i> Order</a></li>
             <li><a href="{{ route('menus.index') }}"><i class="fas fa-bars"></i> Menu</a></li>
-            <li><a href="{{ url('logout') }}"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+            <li><a href="{{ url('logout-page') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </nav>
 
     <main class="content">
-        <h1>Selamat Datang di Order</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h1>Welcome to Order</h1>
+        <p>You Can Order Food and Drinks Here</p>
 
         <a href="{{ route('orders.create') }}" class="btn btn-info">Add Order</a>
 

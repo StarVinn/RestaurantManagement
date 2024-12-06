@@ -60,7 +60,7 @@
         .form-container button {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
@@ -70,7 +70,7 @@
         }
 
         .form-container button:hover {
-            background-color: #218838;
+            background-color: #005fc5;
         }
 
         .form-container a {
@@ -112,7 +112,7 @@
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
-        <a href="{{route('menus.index')}}">Back</a>    
+        <a href="{{route('orders.index')}}">Back</a>    
     </div>
 </body>
 </html>

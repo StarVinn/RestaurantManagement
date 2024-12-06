@@ -80,7 +80,7 @@
     
     <div class="container">
         <h1>Welcome to Starbhak Restaurant</h1>
-        <p>Explore our platform by logging in, registering, or visiting the home page.</p>
+        <p>Kami dengan senang hati menyambut Anda untuk menikmati pengalaman kuliner terbaik. Temukan cita rasa istimewa yang kami hadirkan dengan penuh cinta dan dedikasi.</p>
         
         <div>
             @auth

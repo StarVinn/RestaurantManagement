@@ -150,16 +150,16 @@
     <div class="sidebar">
         <h2>Restoran</h2>
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{{route('orders.index')}}"><i class="fas fa-solid fa-cash-register"></i> Order</a></li>
             <li><a href="{{ route('menus.index') }}"><i class="fas fa-bars"></i> Menu</a></li>
-            <li><a href="{{('logout')}}"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+            <li><a href="{{('logout-page')}}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 
     <div class="content">
-        <h1>Selamat Datang di Dashboard</h1>
-        <p>Ini adalah konten dashboard Anda. Anda bisa menambahkan lebih banyak komponen di sini.</p>
+        <h1>Welcome to Dashboard, {{ Auth::user()->username }}</h1>
+        <p>This is the content of your dashboard. You can see the number of menus and the number of orders available.</p>
         <div class="cards">
             <div class="card">
                 <div class="card-content">

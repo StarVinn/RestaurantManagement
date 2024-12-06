@@ -55,7 +55,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5cb85c;
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 4px;
@@ -64,7 +64,7 @@
         }
 
         button:hover {
-            background-color: #4cae4c;
+            background-color: #005fc4;
         }
 
         .btn-back {
@@ -86,25 +86,21 @@
         @method('PUT')
         <h1>Edit Menu</h1>
 
-        <!-- Name Field -->
         <div class="mb-3">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" value="{{ $menu->name }}" required>
         </div>
 
-        <!-- Price Field -->
         <div class="mb-3">
             <label for="price">Price</label>
             <input type="number" name="price" id="price" step="0.01" value="{{ $menu->price }}" required>
         </div>
 
-        <!-- Description Field -->
         <div class="mb-3">
             <label for="description">Description</label>
             <textarea name="description" id="description" required>{{ $menu->description }}</textarea>
         </div>
 
-        <!-- Category Field -->
         <div class="mb-3">
             <label for="category_id">Category</label>
             <select name="category_id" id="category_id" required>
@@ -114,11 +110,8 @@
             </select>
         </div>
 
-        <!-- Submit Button -->
         <button type="submit">Update</button>
     </form>
-
-    <!-- Back Link -->
     <a href="{{ route('menus.index') }}" class="btn-back">Back</a>
 </body>
 </html>

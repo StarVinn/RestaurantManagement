@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::resource('menus', MenuController::class);
     Route::resource('orders', OrderController::class);
+    Route::get('/logout-page', function () {
+        return view('logout-page'); // Nama file Blade
+    })->name('logout.page');
 });
 
 
@@ -41,4 +44,4 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [LoginController::class, 'register'])->name('post.register');
 });
 
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
