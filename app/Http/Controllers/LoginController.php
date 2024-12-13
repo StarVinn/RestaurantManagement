@@ -35,7 +35,7 @@ class LoginController extends Controller
             'password' => bcrypt($request->password),
         ]);
  
-        return redirect()->route('post.login');
+        return redirect()->route('post.login')->with('success','User create successfully');
     }
     public function logout(Request $request){
         Auth::logout();

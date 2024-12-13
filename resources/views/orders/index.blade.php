@@ -75,65 +75,124 @@
         transform: scale(1.2);
     }
 
-        .content {
-            flex: 1;
-            padding: 30px;
-            background-color: #ffffff;
-            overflow-y: auto;
-        }
+    .content {
+        flex: 1;
+        padding: 30px;
+        background-color: #ffffff;
+        overflow-y: auto;
+    }
 
-        .content h1 {
-            color: #007bff;
-            font-size: 32px;
-        }
+    .content h1 {
+        color: #007bff;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
 
-        .table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
+    /* Optional Scrollbar for Sidebar */
+    .sidebar {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #0056b3 #ffffff;
+    }
 
-        .table th, .table td {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
+    .sidebar::-webkit-scrollbar {
+        width: 8px;
+    }
 
-        .table thead th {
-            background-color: #007bff;
-            color: white;
-        }
+    .sidebar::-webkit-scrollbar-thumb {
+        background: #0056b3;
+        border-radius: 10px;
+    }
 
-        .table tbody tr:hover {
-            background-color: #d1e7fd;
-        }
+    .sidebar::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+        /* Styling for Add Menu Button */
+    .add-menu-btn {
+        margin-bottom: 10px;
+    }
 
-        .btn {
-            padding: 5px 10px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-        }
+    .add-menu-btn a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px 20px;
+        color: white;
+        background-color: #007BFF; /* Green color for the button */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
-        .btn-info {
-            background-color: #17a2b8;
-            color: white;
-        }
+    .add-menu-btn a:hover {
+        background-color: #005dc1; /* Darker green on hover */
+    }
 
-        .btn-info:hover {
-            background-color: #138496;
-        }
+    /* Updated Table Styling */
+    .table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .btn-danger {
-            background-color: #dc3545;
-            color: white;
-        }
+    .table thead {
+        background-color: #007BFF;
+        color: white;
+    }
 
-        .btn-danger:hover {
-            background-color: #c82333;
-        }
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover {
+        background-color: #d1e7fd;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-info {
+        background-color: #FFC107;
+        color: white;
+    }
+
+    .btn-info:hover {
+        background-color: #FFB400;
+    }
+
+    .btn-danger {
+        background-color: #DC3545;
+        color: white;
+    }
+
+    .btn-danger:hover {
+        background-color: #C82333;
+    }
+
+    .btn-primary {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
     </style>
 </head>
 <body>
@@ -148,11 +207,13 @@
         </ul>
     </nav>
 
-    <main class="content">
+    <div class="content">
         <h1>Welcome to Order</h1>
         <p>You Can Order Food and Drinks Here</p>
-
-        <a href="{{ route('orders.create') }}" class="btn btn-info">Add Order</a>
+        <div class="table">
+            <div class="add-menu-btn">
+                <a href="{{ route('orders.create') }}">Add Order</a>
+            </div>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
